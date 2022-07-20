@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { DemoRoutingModule } from './demo-routing.module';
 import { ButtonsComponent } from './buttons/buttons.component';
-import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { FlexBoxComponent } from './flex-box/flex-box.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FlexBoxComponent } from './flex-box/flex-box.component';
   imports: [
     CommonModule,
     DemoRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    FlexLayoutModule
   ]
 })
 export class DemoModule { }
