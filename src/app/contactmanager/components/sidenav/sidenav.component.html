@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav mat-elevation-z10" [mode]="isScreenSmall ? 'over' : 'side' " [opened]="!isScreenSmall"  disableClose="false">
+  <mat-drawer #drawer  class="example-sidenav mat-elevation-z10" [mode]="isScreenSmall ? 'over' : 'side' " [opened]="!isScreenSmall"  disableClose="false">
     <mat-toolbar class="sideNav-heading">
       <span>Contacts</span>
     </mat-toolbar>
@@ -12,12 +12,12 @@
   </mat-drawer>
 
   <div class="example-sidenav-content" >
-    <app-toolbar>Contacts</app-toolbar>
+    <app-toolbar (toggleSideNav)="drawer.toggle()">Contacts</app-toolbar>
     <p>sidenav works!</p>
     <router-outlet></router-outlet>
-    <button type="button" mat-button (click)="drawer.toggle()">
+    <!-- <button type="button" mat-button (click)="drawer.toggle()">
       Toggle sidenav
-    </button>
+    </button> -->
   </div>
 
 </mat-drawer-container>
