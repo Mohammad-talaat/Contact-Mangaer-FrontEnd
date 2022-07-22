@@ -9,6 +9,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { Routes , RouterModule } from '@angular/router';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path:'', component:ContactmanagerAppComponent,
@@ -32,7 +34,11 @@ children:[
     FlexLayoutModule,
     AngularMaterialModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule
+  ],
+  providers:[
+    UserService
   ]
 })
 export class ContactmanagerModule { }
