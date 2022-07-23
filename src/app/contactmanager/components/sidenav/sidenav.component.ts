@@ -13,12 +13,18 @@ const smallBrPoint = 750;
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
+
+  isDarkTheme:boolean = false;
   users!:Observable<User[]>;
   constructor(private breakPointObvserver: BreakpointObserver,private router:Router,
     private userService:UserService) { }
   showFiller:boolean = false;
   isScreenSmall:boolean = false;
   @ViewChild(MatDrawer) drawer !: MatDrawer
+
+  toggleTheme(){
+    this.isDarkTheme = !this.isDarkTheme
+  }
 
   ngOnInit(): void {
     this.breakPointObvserver.observe([`(max-width:${smallBrPoint}px)`]).subscribe((state:BreakpointState)=>{
