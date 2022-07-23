@@ -15,6 +15,7 @@ import { NewContactDialogComponent } from '../new-contact-dialog/new-contact-dia
 export class ToolbarComponent implements OnInit {
 @Output() toggleSideNav = new EventEmitter<void>()
 @Output() toggleTheme = new EventEmitter<void>()
+@Output() toggleDir = new EventEmitter<void>()
 
   sideNavDrawer:boolean = false;
   constructor(private dialog:MatDialog, private snackBar:MatSnackBar,private router:Router) { }

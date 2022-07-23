@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container " [class.dark-theme]="isDarkTheme" autosize>
+<mat-drawer-container class="example-container" [class.dark-theme]="isDarkTheme" [dir]="direction"  autosize>
   <mat-drawer #drawer  class="example-sidenav mat-elevation-z10" [mode]="isScreenSmall ? 'over' : 'side' " [opened]="!isScreenSmall"  disableClose="false">
     <mat-toolbar class="sideNav-heading">
       <span>Contacts</span>
@@ -17,7 +17,8 @@
 
   <div class="example-sidenav-content" >
     <app-toolbar (toggleSideNav)="drawer.toggle()"
-                  (toggleTheme)="toggleTheme()">Contacts</app-toolbar>
+                  (toggleTheme)="toggleTheme()"
+                  (toggleDir)="toggleDir()">Contacts</app-toolbar>
 
     <div class="wrapper">
       <router-outlet></router-outlet>

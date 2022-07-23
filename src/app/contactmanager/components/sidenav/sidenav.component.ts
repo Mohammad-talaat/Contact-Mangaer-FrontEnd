@@ -14,6 +14,7 @@ const smallBrPoint = 750;
 })
 export class SidenavComponent implements OnInit {
 
+  direction:string | any = 'ltr'
   isDarkTheme:boolean = false;
   users!:Observable<User[]>;
   constructor(private breakPointObvserver: BreakpointObserver,private router:Router,
@@ -24,6 +25,10 @@ export class SidenavComponent implements OnInit {
 
   toggleTheme(){
     this.isDarkTheme = !this.isDarkTheme
+  }
+
+  toggleDir(){
+    this.direction = this.direction == 'ltr'? 'rtl':'ltr'
   }
 
   ngOnInit(): void {
