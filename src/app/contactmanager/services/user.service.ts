@@ -20,13 +20,18 @@ constructor(private http:HttpClient){
     return this._users.asObservable()
   }
 
-loadAll(){
-  const userURL = 'https://angular-material-api.azurewebsites.net/users'
-  return this.http.get<User[]>(userURL).subscribe(data => {
-    this.dataStore.users = data;
-    this._users.next(Object.assign({},this.dataStore).users)
-  },error => {
-    console.log('Failed to fetch users')
-  })
-}
+  userById(id:number){
+    return this.dataStore.users.find( x => x.id == id )
+  }
+
+  loadAll(){
+    const userURL = 'https://angular-material-api.azurewebsites.net/users'
+    return this.http.get<User[]>(userURL).subscribe(data => {
+      this.dataStore.users = data;
+      this._users.next(Object.assign({},this.dataStore).users)
+      },error => {
+      console.log('Failed to fetch users')
+      }
+    )
+  }
 }
